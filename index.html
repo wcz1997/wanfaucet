@@ -49,7 +49,7 @@
               if(is_connect == true) {
                 var contract = new ethers.Contract(address, abi, provider);
                 var contractsigner = contract.connect(signer);
-                var is_claim = await contractsigner.requestedAddress(msg_address);
+                var is_claim = await contract.requestedAddress(msg_address.toString());
                 if (is_claim == true) {
                     alert("You have claimed before");
                 }
