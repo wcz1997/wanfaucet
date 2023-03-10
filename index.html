@@ -5,13 +5,11 @@
         <title>faucet</title>
     </head>
     <body>
-        <div style="text-align:center">
+      
+        <script type="module">
             <button id="connect">connect</button>
             <button id="claim">claim</button>
             <button id="add_token">add_token</button>
-        </div>
-        
-        <script type="module">
             import { ethers } from "https://cdn-cors.ethers.io/lib/ethers-5.6.9.esm.min.js";
 
             var address;
@@ -60,7 +58,7 @@
               else {
                 alert("pls connect your wallet")
               }
-            })
+            },false)
 
             var add_token = document.getElementById("add_token");
             add_token.addEventListener('click', async function(){
