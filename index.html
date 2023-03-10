@@ -51,6 +51,7 @@
                     alert("You have claimed before");
                 }
                 else {
+                    contract.connect(signer);
                     await contract.requestTokens();
                 }
               }
