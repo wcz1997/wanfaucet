@@ -54,14 +54,13 @@
                     alert("You have claimed before");
                 }
                 else {
-         
                     await contractsigner.requestTokens();
                 }
               }
               else {
                 alert("pls connect your wallet")
               }
-            },false)
+            })
 
             var add_token = document.getElementById("add_token");
             add_token.addEventListener('click', async function(){
