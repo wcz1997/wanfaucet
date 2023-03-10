@@ -45,19 +45,20 @@
             claim.addEventListener('click', async function(){
               if(is_connect == true) {
                 var contract = new ethers.Contract(address, abi, provider);
-                var is_claim = await contract.requestedAddress(msg_address.toString());
+                var contractsigner = contract.connect(signer);
+                var is_claim = await contractsigner.requestedAddress(msg_address.toString());
                 if (is_claim == true) {
                     alert("You have claimed before");
                 }
                 else {
-                    contract.connect(signer);
-                    await contract.requestTokens();
+         
+                    await contractsigner.requestTokens();
                 }
               }
               else {
                 alert("pls connect your wallet")
               }
-            })
+            },false)
 
             var add_token = document.getElementById("add_token");
             add_token.addEventListener('click', async function(){
@@ -80,7 +81,7 @@
                     },
                 });
               }
-            })
+            },false)
         </script>
     </body>
 </html>
